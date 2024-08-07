@@ -568,7 +568,7 @@ Uses prefix (as PREFIX) to choose where to display it:
       ;;   (Note: the line with the comment should not contain any text matching other indent
       ;;    regexp or this user-control instruction will be ignored; also at most will count
       ;;    per line ...)
-      (defvar plantuml-indent-regexp-block-start "^.*{\s*$"
+      (defvar plantuml-indent-regexp-block-start "^.*\\(:?{\\|\\[\\)\s*$"
         "Indentation regex for all plantuml elements that might define a {} block.
 Plantuml elements like skinparam, rectangle, sprite, package, etc.
 The opening { has to be the last visible character in the line (whitespace
@@ -607,7 +607,7 @@ or it is followed by line end.")
                                                  plantuml-indent-regexp-macro-start
                                                  plantuml-indent-regexp-oldif-start
                                                  plantuml-indent-regexp-user-control-start))
-      (defvar plantuml-indent-regexp-block-end "^\s*\\(?:}\\|endif\\|else\s*.*\\|end\\)\s*\\('.*\\)?$")
+      (defvar plantuml-indent-regexp-block-end "^\s*\\(?:}}\\|}\\|\\]\\|endif\\|else\s*.*\\|end\\)\s*\\('.*\\)?$")
       (defvar plantuml-indent-regexp-note-end "^\s*\\(end\s+note\\|end[rh]note\\)\s*\\('.*\\)?$")
       (defvar plantuml-indent-regexp-group-end "^\s*end\s*\\('.*\\)?$")
       (defvar plantuml-indent-regexp-activate-end "^\s*deactivate\s+.+$")
